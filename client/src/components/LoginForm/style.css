@@ -1,0 +1,23 @@
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navBarText {
+    color: var(--mainText);
+  
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 60px;  
+  }
+
+  form.login,
+  label, 
+  .loginBTN {
+    margin-top: 20px;
+  }
+ 
