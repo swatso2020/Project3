@@ -12,6 +12,6 @@ const placeSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Place = mongoose.model("Place", placeSchema);
+const Places = mongoose.model("Places", placeSchema);
 
-module.exports = Place;
+module.exports = Places;

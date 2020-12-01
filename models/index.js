@@ -1,5 +1,5 @@
 module.exports = {
     Post: require("./postModel"),
-    User: require("./userModel"),
+    User: require("./user"),
     Places:require("./places")
   };
