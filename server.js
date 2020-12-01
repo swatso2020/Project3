@@ -1,28 +1,25 @@
-const express = require('express')
-const cors = require('cors');
-const  mongoose  = require('mongoose');
+const express = require("express");
 
-require('dotenv').config();
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const app = express();
+const PORT = process.env.PORT || 8080;
 
-const app = express()
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
+// Define middleware here
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+// Add routes, both API and view
+app.use(routes);
+console.log(routes)
 
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true})
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/placestogo");
 
-const connection = mongoose.connection;
-connection.once('open',() => {
-    console.log("MongoDB database connection established successfully")
-})
-
-const postrouter = require('./routes/api/postRoute')
-//const userrouter = require('./routes/api/account')
-
-app.use('./posts',postrouter)
-//app.use('./user',userrouter)
+// Start the API server
 app.listen(PORT, function() {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-  });
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
