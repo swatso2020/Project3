@@ -1,0 +1,28 @@
+.placesSearchContainter{
+    background-color: #005675;
+    background-image: url("https://images.unsplash.com/photo-1570716766667-59b1d62b84a1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTUzfHxyZXN0YXVyYW50c3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    height: 900px;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.brand{
+    position: absolute;
+    right: 90px;
+    top: 40px;
+}
+
+.input{
+    position: absolute;
+    top: 30%;
+}
+
+.margin{
+    margin:10px;
+}
+
+
+
+
+
+  
