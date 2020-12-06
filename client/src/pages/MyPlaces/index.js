@@ -11,7 +11,7 @@ class MyPlaces extends Component {
         this.loadLocations();
     };
 
-    // loads books from database
+    // loads locations from database
     loadLocations = event => {
 
         API.getPlaces()
