@@ -8,11 +8,11 @@ class MyPlaces extends Component {
     };
 
     componentDidMount() {
-        this.loadLocations();
+        this.loadPlaces();
     };
 
     // loads locations from database
-    loadLocations = event => {
+    loadPlaces = event => {
 
         API.getPlaces()
             .then(res => {

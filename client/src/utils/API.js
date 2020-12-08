@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // endpoint from api
-const BaseUrl = ""
+const BaseUrl = "https://api.yelp.com/v3/events?categories=food&location=miami&start_date>1606958848"
 
 export default {
   logIn: function (email, password) {
