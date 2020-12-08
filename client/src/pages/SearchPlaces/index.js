@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import NavTab from "../../components/NavTabs/SearchNavTab";
+import {Container, Row, Col} from "../../components/Grid";
+import {PlaceList, PlaceListItem} from "../../components/List";
 import "./style.css"
 
 
@@ -38,13 +40,30 @@ class SearchPlaces extends Component {
                     <div className="ui action input">
                         <form>
                             <div className="input-group mb-3" >
-                                <input type="text" style={{ width: "400px", height: "35px" }} className="form-control margin" placeholder="Search for a Place" name="bookSearch"
-                                    value={this.state.bookSearch} onChange={this.handleInputChange} />
+                                <input type="text" style={{ width: "400px", height: "35px" }} className="form-control margin" placeholder="Search for a Place" name="placeSearch"
+                                    value={this.state.placeSearch} onChange={this.handleInputChange} />
                                 <button type="button" style={{ height: "35px" }} className="btn btn-success margin" onClick={this.handleFormSubmit}>Search</button>
                             </div>
                         </form>
                     </div>
                 </div>
+
+                <Container>
+                    <Row>
+                        <Col size="xs-12">
+                            <PlaceList>
+                                {this.state.places.map(place => {
+                                    return (
+                                        <PlaceListItem
+                                            
+                                        
+                                        
+                                        />);
+                                })}
+                            </PlaceList>
+                        </Col>
+                    </Row>
+                </Container>
 
             </div>
 
