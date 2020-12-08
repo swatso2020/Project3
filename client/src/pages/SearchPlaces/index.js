@@ -17,6 +17,7 @@ class SearchPlaces extends Component {
         this.setState({ [name]: value })
     };
 
+
     handleFormSubmit = event => {
         event.preventDefault()
 
