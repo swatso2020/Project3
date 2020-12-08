@@ -11,12 +11,12 @@ function SearchPlaces(props) {
   const [Places, setPlaces] = useState({})
 
  
-  // const {} = useParams()
-  // useEffect(() => {
-  //   API.getBook()
-  //     .then(res => setPlace(res.data))
-  //     .catch(err => console.log(err));
-  // }, [])
+//   const {} = useParams()
+//   useEffect(() => {
+//     API.getBook()
+//       .then(res => setPlace(res.data))
+//       .catch(err => console.log(err));
+//   }, [])
 
 
   return (

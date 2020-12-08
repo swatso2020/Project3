@@ -57,10 +57,12 @@ module.exports = {
   },
   ypFind: function(req, res) {
     client.eventSearch({
-      categories: 2,
+      categories: 'food',
       //is_free: true,
-      location:'mami'
+      city:'mami',
+      time_start:'>1606958848',
     }).then(response => {
+      res.json(response.jsonBody)
       console.log(response.jsonBody);
     }).catch(e => {
       console.log(e);

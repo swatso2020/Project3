@@ -26,5 +26,14 @@ export default {
   // Saves a place from the user
   savePlace: function(placeData) {
     return axios.post("/api/places", placeData);
+  },
+  getYelp: function() {
+    return axios.get("/api/yelp");
+  },
+  getYelpfind: function() {
+    return axios.get("/api/yelpfind");
+  },
+  getYp: function() {
+    return axios.get("/api/yp");
   }
 };
