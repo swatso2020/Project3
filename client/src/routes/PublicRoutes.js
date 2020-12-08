@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-do
 import LoginPage from '../pages/Login';
 import SignUpPage from '../pages/SignUp';
 import SearchPlaces from '../pages/SearchPlaces';
-import SavedPlaces from '../pages/SavedPlaces';
+import MyPlaces from '../pages/MyPlaces';
 
 const PublicRoutes=()=>{
     return <Router>
@@ -13,7 +13,7 @@ const PublicRoutes=()=>{
 
 
             <Route exact={true} path="/search" component={SearchPlaces} />
-            <Route exact={true} path="/savedplaces" component={SavedPlaces} />
+            <Route exact={true} path="/myplaces" component={MyPlaces} />
             <Redirect to="/login" />
         </Switch>
         </Router>

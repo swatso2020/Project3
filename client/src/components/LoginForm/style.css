@@ -4,8 +4,7 @@
   }
 
   .navBarText {
-    color: var(--mainText);
-  
+    margin-bottom: 10px;
   }
 
   .logo {
@@ -15,9 +14,15 @@
     height: 60px;  
   }
 
-  form.login,
+  h2
   label, 
   .loginBTN {
     margin-top: 20px;
   }
- 
+
+  .container {
+    align-items: center;
+    justify-content: center;
+  
+  }
+
