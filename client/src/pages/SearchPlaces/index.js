@@ -1,60 +1,75 @@
-import React, { useState, useEffect } from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from 'react-router-dom';
-import logo from './logo.png';
-import { Icon } from 'semantic-ui-react';
+import NavTab from "../../components/NavTabs/SearchNavTab";
+import {Container, Row, Col} from "../../components/Grid";
+import {PlaceList, PlaceListItem} from "../../components/List";
 import "./style.css"
 
 
-function SearchPlaces(props) {
-  const [Places, setPlaces] = useState({})
+class SearchPlaces extends Component {
+    state = {
+        places: [],
+        placeSearch: ""
+    };
 
- 
-//   const {} = useParams()
-//   useEffect(() => {
-//     API.getBook()
-//       .then(res => setPlace(res.data))
-//       .catch(err => console.log(err));
-//   }, [])
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value })
+    };
+
+    handleFormSubmit = event => {
+        event.preventDefault()
+
+        API.searchPlaces(this.state.placeSearch)
+            .then(res => {
+                this.setState({ places: res.data.items }, function () {
+                    console.log(this.state.places);
+                })
+            })
+            .catch(err => console.log(err))
+    };
 
 
-  return (
-    <div>
-    <nav className="navbar navbar-default">
-        <div className="container-fluid">
-        <div><Link to="/dashboard">My places</Link></div>   
-            <div className="top-bar text-center u-text-centered">
-                <img className="logo" src={logo} />
-                <p className="navBarText">Places to Go</p>
+    render() {
+        return (
+            <div>
+
+                <NavTab />
+
+                <div className="container-fluid placesSearchContainter justify-content-center ">
+                    <div className="ui action input">
+                        <form>
+                            <div className="input-group mb-3" >
+                                <input type="text" style={{ width: "400px", height: "35px" }} className="form-control margin" placeholder="Search for a Place" name="placeSearch"
+                                    value={this.state.placeSearch} onChange={this.handleInputChange} />
+                                <button type="button" style={{ height: "35px" }} className="btn btn-success margin" onClick={this.handleFormSubmit}>Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <Container>
+                    <Row>
+                        <Col size="xs-12">
+                            <PlaceList>
+                                {this.state.places.map(place => {
+                                    return (
+                                        <PlaceListItem
+                                            
+                                        
+                                        
+                                        />);
+                                })}
+                            </PlaceList>
+                        </Col>
+                    </Row>
+                </Container>
+
             </div>
-            <Icon link name='sign-out' className='sign-out'><a class="navBarText logout" href="/logout">Logout</a></Icon>
-        </div>
-    </nav>
-    
-    <div className="container-fluid placesSearchContainter justify-content-center ">
-    <div className="row col-12">
-        <span className="brand">
-            <h1> </h1>
-        </span>
-    </div>
-    <div className="ui action input">
-        <form>
-        <div className="input-group mb-3" style={{textAlign: "center"}}>
-           <input type="text" style={{width: "400px", height:"35px"}} className="form-control margin" placeholder="..." aria-label="Username" aria-describedby="basic-addon1"/>
-           <input type="text" style={{width: "400px", height:"35px"}} className="form-control margin" placeholder="..." aria-label="Username" aria-describedby="basic-addon1"/>
-           <button type="button" style={{height:"35px"}} className="btn btn-success margin">Search</button>
-        </div>
-        </form>
-    </div>
-</div>
 
-
-
-</div>
-      
-    );
-  }
+        );
+    }
+}
 
 
 export default SearchPlaces;

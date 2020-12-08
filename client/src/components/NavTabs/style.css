@@ -1,11 +1,10 @@
-.navbar {
+  .navbar {
     display: flex;
     justify-content: space-between;
   }
 
   .navBarText {
-    color: var(--mainText);
-  
+    margin-bottom: 10px;
   }
 
   .logo {
@@ -15,8 +14,7 @@
     height: 60px;  
   }
 
-  h2,
-  label, 
-  .signupBTN {
-    margin-top: 20px;
+  .logout{
+    margin-left: -60px;
   }
+
