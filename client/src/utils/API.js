@@ -1,22 +1,33 @@
 import axios from "axios";
 
 // endpoint from api
-const BaseUrl = "https://api.yelp.com/v3/events?categories=food&location=miami&start_date>1606958848"
 
-export default {
+const object = 
+  {
   logIn: function (email, password) {
-    return axios.post("/api/auth/login", { email, password });
+    return axios.post("/api/auth/login", { email, password })
+  ;
   },
   verifyAuthentication: function () {
     return axios.get("/api/auth/login", {
       headers: {
-        Authorization: localStorage.getItem("authorization-token")
+
+        Authorization: "Bearer 7m9YFK7IxQ65bCEeWVqANj4x8EXKbBVNbqRholruzDengYIvfK0ceLbMGdN59F3XH8YTzp_fivrLrxR7VewRxsixBpy5q_HjFgnRTm3vn_zl8RidOjh9NOOBaD28X3Yx"
       }
     })
   },
   // calls api and retrieve places based on user input
   searchPlaces: function (query) {
-    return axios.get(BaseUrl + query);
+    const queryUrl = "http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+ query +"&location=miami"
+    return axios.get(queryUrl, {
+      
+      headers: {
+
+        Authorization: "Bearer 7m9YFK7IxQ65bCEeWVqANj4x8EXKbBVNbqRholruzDengYIvfK0ceLbMGdN59F3XH8YTzp_fivrLrxR7VewRxsixBpy5q_HjFgnRTm3vn_zl8RidOjh9NOOBaD28X3Yx"
+      }
+      
+    })
+    ;
   },
   // Gets saved places saved in db
   getPlaces: function () {
@@ -44,3 +55,5 @@ export default {
     return axios.get("/api/yp");
   }
 };
+
+export default object

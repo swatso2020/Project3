@@ -23,7 +23,7 @@ class SearchPlaces extends Component {
         API.searchPlaces(this.state.placeSearch)
             .then(res => {
                 this.setState({ places: res.data.items }, function () {
-                    console.log(this.state.places);
+                    console.log(res);
                 })
             })
             .catch(err => console.log(err))
@@ -38,7 +38,7 @@ class SearchPlaces extends Component {
 
                 <div className="container-fluid placesSearchContainter justify-content-center ">
                     <div className="ui action input">
-                        <form>
+                        <form onSubmit={this.handleFormSubmit}>
                             <div className="input-group mb-3" >
                                 <input type="text" style={{ width: "400px", height: "35px" }} className="form-control margin" placeholder="Search for a Place" name="placeSearch"
                                     value={this.state.placeSearch} onChange={this.handleInputChange} />
@@ -52,7 +52,7 @@ class SearchPlaces extends Component {
                     <Row>
                         <Col size="xs-12">
                             <PlaceList>
-                                {this.state.places.map(place => {
+                                {this.state.places && this.state.places.map(place => {
                                     return (
                                         <PlaceListItem
                                             
