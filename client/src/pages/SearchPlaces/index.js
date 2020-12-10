@@ -5,7 +5,6 @@ import {Container, Row, Col} from "../../components/Grid";
 import {PlaceList, PlaceListItem} from "../../components/List";
 import "./style.css"
 
-
 class SearchPlaces extends Component {
     state = {
         places: [],
@@ -55,8 +54,8 @@ class SearchPlaces extends Component {
                                 {this.state.places.map(place => {
                                     return (
                                         <PlaceListItem
-                                            
-                                        
+                                        name={place.name}
+                                        description={place.description}
                                         
                                         />);
                                 })}
