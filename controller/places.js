@@ -57,10 +57,7 @@ module.exports = {
   },
   ypFind: function(req, res) {
     client.eventSearch({
-      categories: 2,
-      //is_free: true,
-      location:'mami'
-    }).then(response => {
+
       console.log(response.jsonBody);
     }).catch(e => {
       console.log(e);

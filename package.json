@@ -19,6 +19,7 @@
     "inherits": "^2.0.4",
     "isarray": "^1.0.0",
     "kareem": "^2.3.1",
+    "mapbox-gl": "^1.13.0",
     "md5": "^2.3.0",
     "memory-pager": "^1.5.0",
     "mongodb": "^3.6.3",
@@ -42,7 +43,8 @@
     "sparse-bitfield": "^3.0.3",
     "string_decoder": "^1.1.1",
     "util-deprecate": "^1.0.2",
-    "vary": "^1.1.2"
+    "vary": "^1.1.2",
+    "yelp-fusion": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
