@@ -19,12 +19,11 @@ class SearchPlaces extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
-
+        
         API.searchPlaces(this.state.placeSearch)
+        
             .then(res => {
-                this.setState({ places: res.data.items }, function () {
-                    console.log(res);
-                })
+                this.setState({ places: res.data.businesses})
             })
             .catch(err => console.log(err))
     };
@@ -55,7 +54,9 @@ class SearchPlaces extends Component {
                                 {this.state.places && this.state.places.map(place => {
                                     return (
                                         <PlaceListItem
-                                            
+                                            name = {place.alias}
+                                            key = {place.alias}
+
                                         
                                         
                                         />);
