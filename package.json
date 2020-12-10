@@ -15,7 +15,6 @@
     "denque": "^1.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "Express": "^3.0.1",
     "inherits": "^2.0.4",
     "isarray": "^1.0.0",
     "kareem": "^2.3.1",

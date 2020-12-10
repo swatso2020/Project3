@@ -42,7 +42,7 @@ function SearchPlaces(props) {
         <form>
         <div className="input-group mb-3" style={{textAlign: "center"}}>
            <input type="text" style={{width: "400px", height:"35px"}} className="form-control margin" placeholder="..." aria-label="Username" aria-describedby="basic-addon1"/>
-           <input type="text" style={{width: "400px", height:"35px"}} className="form-control margin" placeholder="..." aria-label="Username" aria-describedby="basic-addon1"/>
+           
            <button type="button" style={{height:"35px"}} className="btn btn-success margin">Search</button>
         </div>
         </form>
