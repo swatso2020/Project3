@@ -18,7 +18,7 @@ export function PlaceListItem (props) {
     const handleSaveBtn = event => {
 
         API.savePlace({
-            //name: props.name,
+            name: props.name
             //description: props.description,
             //imageUrl: props.imageUrl,
         }).then(
