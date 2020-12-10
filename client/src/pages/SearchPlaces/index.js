@@ -1,33 +1,71 @@
-import React, { useState, useEffect } from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from 'react-router-dom';
-import logo from './logo.png';
-import { Icon } from 'semantic-ui-react';
+import NavTab from "../../components/NavTabs/SearchNavTab";
+import {Container, Row, Col} from "../../components/Grid";
+import {PlaceList, PlaceListItem} from "../../components/List";
 import "./style.css"
 
+class SearchPlaces extends Component {
+    state = {
+        places: [],
+        placeSearch: ""
+    };
 
-function SearchPlaces(props) {
-  const [Places, setPlaces] = useState({})
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value })
+    };
 
- 
-  // const {} = useParams()
-  // useEffect(() => {
-  //   API.getBook()
-  //     .then(res => setPlace(res.data))
-  //     .catch(err => console.log(err));
-  // }, [])
+    handleFormSubmit = event => {
+        event.preventDefault()
+
+        API.searchPlaces(this.state.placeSearch)
+            .then(res => {
+                this.setState({ places: res.data.items }, function () {
+                    console.log(res);
+                })
+            })
+            .catch(err => console.log(err))
+    };
 
 
-  return (
-    <div>
-    <nav className="navbar navbar-default">
-        <div className="container-fluid">
-        <div><Link to="/dashboard">My places</Link></div>   
-            <div className="top-bar text-center u-text-centered">
-                <img className="logo" src={logo} />
-                <p className="navBarText">Places to Go</p>
+    render() {
+        return (
+            <div>
+
+                <NavTab />
+
+                <div className="container-fluid placesSearchContainter justify-content-center ">
+                    <div className="ui action input">
+                        <form onSubmit={this.handleFormSubmit}>
+                            <div className="input-group mb-3" >
+                                <input type="text" style={{ width: "400px", height: "35px" }} className="form-control margin" placeholder="Search for a Place" name="placeSearch"
+                                    value={this.state.placeSearch} onChange={this.handleInputChange} />
+                                <button type="button" style={{ height: "35px" }} className="btn btn-success margin" onClick={this.handleFormSubmit}>Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <Container>
+                    <Row>
+                        <Col size="xs-12">
+                            <PlaceList>
+                                {this.state.places && this.state.places.map(place => {
+                                    return (
+                                        <PlaceListItem
+                                        name={place.name}
+                                        description={place.description}
+                                        
+                                        />);
+                                })}
+                            </PlaceList>
+                        </Col>
+                    </Row>
+                </Container>
+
             </div>
+<<<<<<< HEAD
             <Icon link name='sign-out' className='sign-out'><a class="navBarText logout" href="/logout">Logout</a></Icon>
         </div>
     </nav>
@@ -55,6 +93,12 @@ function SearchPlaces(props) {
       
     );
   }
+=======
+
+        );
+    }
+}
+>>>>>>> 8bba5c2049caa057c367c6d73cd9c19883c2dfbe
 
 
 export default SearchPlaces;
