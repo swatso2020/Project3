@@ -32,7 +32,6 @@ class SearchPlaces extends Component {
     render() {
         return (
             <div>
-
                 <NavTab />
 
                 <div className="container-fluid placesSearchContainter justify-content-center ">
@@ -65,40 +64,10 @@ class SearchPlaces extends Component {
                 </Container>
 
             </div>
-<<<<<<< HEAD
-            <Icon link name='sign-out' className='sign-out'><a class="navBarText logout" href="/logout">Logout</a></Icon>
-        </div>
-    </nav>
-    
-    <div className="container-fluid placesSearchContainter justify-content-center ">
-    <div className="row col-12">
-        <span className="brand">
-            <h1> </h1>
-        </span>
-    </div>
-    <div className="ui action input">
-        <form>
-        <div className="input-group mb-3" style={{textAlign: "center"}}>
-           <input type="text" style={{width: "400px", height:"35px"}} className="form-control margin" placeholder="..." aria-label="Username" aria-describedby="basic-addon1"/>
-           
-           <button type="button" style={{height:"35px"}} className="btn btn-success margin">Search</button>
-        </div>
-        </form>
-    </div>
-</div>
-
-
-
-</div>
-      
-    );
-  }
-=======
 
         );
     }
 }
->>>>>>> 8bba5c2049caa057c367c6d73cd9c19883c2dfbe
 
 
 export default SearchPlaces;

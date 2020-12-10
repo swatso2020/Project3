@@ -1,14 +1,12 @@
 import React from 'react';
-<<<<<<< HEAD
 import image from './logo.png';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
 import { Icon } from 'semantic-ui-react';
 import "./style.css"
 
+
 const SignUpForm = (props) => {
-    
-    
     return (
         <div>
             <nav className="navbar navbar-default">
@@ -21,25 +19,6 @@ const SignUpForm = (props) => {
                 </div>
             </nav>
         <hr />
-=======
-import logo from './logo.png';
-import "./style.css";
-
-const SignUpForm = (props) => {
-
-    return <div>
-
-        <nav className="navbar navbar-light bg-light">
-            <div className="container-fluid">
-                <div></div>
-                <div className="top-bar text-center u-text-centered">
-                    <img className="logo" src={logo} />
-                    <p className="navBarText">Places to Go</p>
-                </div>
-                <div></div>
-            </div>
-        </nav>
->>>>>>> 8bba5c2049caa057c367c6d73cd9c19883c2dfbe
 
 
         <div className="container">
