@@ -3,8 +3,8 @@ const placesController= require("../../controller/places");
 
 
 
-router.route("/")
-  .get(placesController.ypFind)
+// router.route("/")
+//   .get(placesController.ypFind)
 
 
 module.exports = router;

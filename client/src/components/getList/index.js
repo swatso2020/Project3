@@ -17,7 +17,7 @@ export function PlaceListItem (props) {
     // function to handle saving place to db when save button is clicked
     const handleSaveBtn = event => {
 
-        API.savePlace({
+        API.getPlaces({
 
             image_url: props.image_url,
             name: props.name,

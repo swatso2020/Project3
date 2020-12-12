@@ -2,9 +2,37 @@ import React from 'react';
 import image from './logo.png';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
-import { Icon } from 'semantic-ui-react';
-import "./style.css"
+import API from "../../utils/API";
+import "./style.css";
 
+const SignUpForm = (props) => {
+//     //user wants to enter a value and send to DB
+//     class SearchPlaces extends Component {
+//         state = {
+//             places: [],
+//             placeSearch: ""
+//         };
+    
+//         handleInputChange = event => {
+//             const { name, value } = event.target;
+//             this.setState({ [name]: value })
+//         };
+    
+//         handleFormSubmit = event => {
+//             event.preventDefault()
+            
+//             API.searchPlaces(this.state.placeSearch)
+            
+//                 .then(res => {
+    
+//                     this.setState({ places: res.data.businesses }, function () {
+//                     })
+    
+//                 })
+//                 .catch(err => console.log(err))
+        
+
+    return <div>
 
 const SignUpForm = (props) => {
     return (
@@ -38,6 +66,7 @@ const SignUpForm = (props) => {
         </div>
 
     </div>
-    );
+
+    
 }
 export default SignUpForm;

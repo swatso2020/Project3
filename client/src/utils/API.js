@@ -35,6 +35,9 @@ const object =
   getPlaces: function () {
     return axios.get("/api/places");
   },
+  createUser: function () {
+    return axios.get("/api/createUser");
+  },
   // Gets the place with the given id
   getAPlace: function (id) {
     return axios.get("/api/places/" + id);
