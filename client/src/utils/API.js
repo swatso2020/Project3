@@ -12,14 +12,15 @@ const object =
     return axios.get("/api/auth/login", {
       headers: {
 
-        Authorization: "Bearer 7m9YFK7IxQ65bCEeWVqANj4x8EXKbBVNbqRholruzDengYIvfK0ceLbMGdN59F3XH8YTzp_fivrLrxR7VewRxsixBpy5q_HjFgnRTm3vn_zl8RidOjh9NOOBaD28X3Yx"
+        Authorization:localStorage.getItem("authorization-token")
+
       }
     })
   },
   // calls api and retrieve places based on user input
-  searchPlaces: function (query) {
+  searchPlaces: async function (query) {
     const queryUrl = "http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+ query +"&location=miami"
-    return axios.get(queryUrl, {
+   const response = await axios.get(queryUrl, {
       
       headers: {
 
@@ -27,6 +28,7 @@ const object =
       }
       
     })
+    return response
     ;
   },
   // Gets saved places saved in db

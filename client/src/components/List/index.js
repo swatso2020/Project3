@@ -18,9 +18,13 @@ export function PlaceListItem (props) {
     const handleSaveBtn = event => {
 
         API.savePlace({
-            //name: props.name,
-            //description: props.description,
-            //imageUrl: props.imageUrl,
+
+            image_url: props.image_url,
+            name: props.name,
+            categories: props.categories,
+            address: props.address,
+            phone: props.phone,
+
         }).then(
             res => console.log(res)
         )
@@ -47,13 +51,27 @@ export function PlaceListItem (props) {
             <Container>
                 <Row>
                     <Col size="xs-4 sm-2">
-                        <Thumbnail src={props.imageUrl} />
+                        <Thumbnail src={props.image_url} />
                     </Col>
                     <Col size="xs-8 sm-10">
                         <h3>{props.name}</h3>
+                        <h5>
+                           {[props.categories].flat().join(", ")}
+                        </h5>
                         <p>
-                            {props.description}
+                           Address: {props.address}
                         </p>
+                        <p>
+                           Phone Number: {props.phone}
+                        </p>
+                        <a
+                            rel="noreferrer noopener"
+                            className="btn btn-lg btn-danger input-lg yelpBTN"
+                            target="_blank"
+                            href={props.link}
+                        >
+                            Yelp
+                        </a>
                         
                         {/* if there is an object id render the SaveBtn component else render the DeleteBtn component */}
                         {!props.id ?
