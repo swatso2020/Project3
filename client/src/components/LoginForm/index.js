@@ -5,6 +5,7 @@ import photo from './support-local.jpg';
 import { Link } from 'react-router-dom';
 import "./style.css";
 
+
 const LoginForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -21,9 +22,11 @@ const LoginForm = (props) => {
             } catch (error) {
                 alert("Invalid credentials!");
             }
+            
         }
-    }
-
+        
+    } 
+   
     return <div>
         <div className="LoginSignup">
             <div className="container">

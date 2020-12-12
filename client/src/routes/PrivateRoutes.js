@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-do
 import SearchPage from '../pages/SearchPlaces';
 import MyPlaces from '../pages/MyPlaces';
 
+
 const PrivateRoutes=()=>{
     return <Router>
         <Switch>
