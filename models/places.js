@@ -7,10 +7,9 @@ const placeSchema = new Schema({
   categories: String,
   address: String,
   phone: String,
+  url: String,
 
   
-
-  description: String,
   lattitude: Number,
   longitude: Number,
   date: { type: Date, default: Date.now }

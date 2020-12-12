@@ -81,6 +81,7 @@ class SearchPlaces extends Component {
                                             categories={place.categories.title}
                                             address={place.location.display_address}
                                             phone={place.display_phone}
+                                            url={place.url}
                                         />);
                                 })}
                             </PlaceList>
