@@ -28,15 +28,9 @@ function SaveBtn({ type = "default", className, children, onClick }) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-<<<<<<< HEAD
-                    <Modal.Title>You're Place has been saved!</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>You can Places you have saved in the Saved tab!</Modal.Body>
-=======
                     <Modal.Title>The place has been saved!</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>You can view your saved places in "My places" tab!</Modal.Body>
->>>>>>> 333368154ba8284f8ac597a9ab5b40931df35edc
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
