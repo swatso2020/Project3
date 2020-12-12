@@ -19,8 +19,8 @@ const SignUpForm = (props) => {
 
 
         <div className="container">
-            <div className="row">
-                <div className="col-md-6 col-md-offset-3 card card-body">
+            <div className="card">
+                <div className="card-body">
                     <h2>Sign Up</h2>
                     <hr />
                     <form className="signup">

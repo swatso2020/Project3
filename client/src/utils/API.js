@@ -12,7 +12,8 @@ const object =
     return axios.get("/api/auth/login", {
       headers: {
 
-        //Authorization: "Bearer 7m9YFK7IxQ65bCEeWVqANj4x8EXKbBVNbqRholruzDengYIvfK0ceLbMGdN59F3XH8YTzp_fivrLrxR7VewRxsixBpy5q_HjFgnRTm3vn_zl8RidOjh9NOOBaD28X3Yx"
+        Authorization:localStorage.getItem("authorization-token")
+
       }
     })
   },
