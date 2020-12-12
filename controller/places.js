@@ -54,16 +54,17 @@ module.exports = {
     }).catch(e => {
       console.log(e);
     });
-  },
-  ypFind: function(req, res) {
-    client.eventSearch({
-
-      console.log(response.jsonBody);
-    }).catch(e => {
-      console.log(e);
-    });
-
   }
+  // },
+  // ypFind: function(req, res) {
+  //   client.eventSearch({
+
+  //     console.log(response.jsonBody);
+  //   }).catch(e => {
+  //     console.log(e);
+  //   });
+
+  // }
     
   
 
