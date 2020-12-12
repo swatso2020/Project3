@@ -18,11 +18,13 @@ export function PlaceListItem (props) {
     const handleSaveBtn = event => {
 
         API.savePlace({
+
             image_url: props.image_url,
             name: props.name,
             categories: props.categories,
             address: props.address,
             phone: props.phone,
+
         }).then(
             res => console.log(res)
         )
