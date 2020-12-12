@@ -10,8 +10,8 @@
   .logo {
     display: inline-block;
     vertical-align: top;
-    width: 60px;
-    height: 60px;  
+    width: 80px;
+    height: 80px;  
   }
 
   h2
@@ -20,9 +20,41 @@
     margin-top: 20px;
   }
 
-  .container {
-    align-items: center;
-    justify-content: center;
-  
+  .card{
+    margin-top: 50px;
+    margin-left: 18%;      
+    margin-right: 18%;
+    width: auto;
   }
+
+  #createAccountBTN{
+    color:white;
+  }
+  
+  #createAccountBTN{
+    margin-top: 5px;
+  }
+  
+.LoginSignup{
+  background-color: whitesmoke;
+}
+  
+.photo{
+  margin-top:50px;
+  margin-bottom: 50px;
+  height: 600px;
+
+}
+
+.footer{
+  background-color: #4682B4;
+  color:white;
+  height:80px;
+}
+
+
+
+ 
+
+  
 

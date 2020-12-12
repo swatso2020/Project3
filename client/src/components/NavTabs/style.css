@@ -5,6 +5,9 @@
 
   .navBarText {
     margin-bottom: 10px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    color: black;
   }
 
   .logo {
@@ -16,5 +19,9 @@
 
   .logout{
     margin-left: -60px;
+  }
+
+  .nav-link{
+    color:black;
   }
 

@@ -11,12 +11,20 @@
   .logo {
     display: inline-block;
     vertical-align: top;
-    width: 60px;
-    height: 60px;  
+    width: 100px;
+    height: 100px;  
+    margin-top: 10px;
   }
 
   h2,
   label, 
   .signupBTN {
     margin-top: 20px;
+  }
+
+  .card{
+    margin-top: 50px;
+    margin-left: 18%;      
+    margin-right: 18%;
+    width: auto;
   }
