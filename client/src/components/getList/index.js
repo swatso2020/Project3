@@ -17,14 +17,13 @@ export function PlaceListItem (props) {
     // function to handle saving place to db when save button is clicked
     const handleSaveBtn = event => {
 
-        API.savePlace({
+        API.getPlaces({
 
             image_url: props.image_url,
             name: props.name,
             categories: props.categories,
             address: props.address[0],
             phone: props.phone,
-            url: props.url,
 
         }).then(
             res => console.log(res)
@@ -69,7 +68,7 @@ export function PlaceListItem (props) {
                             rel="noreferrer noopener"
                             className="btn btn-lg btn-danger input-lg yelpBTN"
                             target="_blank"
-                            href={props.url}
+                            href={props.link}
                         >
                             Yelp
                         </a>

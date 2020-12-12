@@ -11,14 +11,16 @@ const object =
   verifyAuthentication: function () {
     return axios.get("/api/auth/login", {
       headers: {
+
         Authorization:localStorage.getItem("authorization-token")
+
       }
     })
   },
   // calls api and retrieve places based on user input
-  searchPlaces: function (query) {
+  searchPlaces: async function (query) {
     const queryUrl = "http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+ query +"&location=miami"
-    return axios.get(queryUrl, {
+   const response = await axios.get(queryUrl, {
       
       headers: {
 
@@ -26,11 +28,15 @@ const object =
       }
       
     })
+    return response
     ;
   },
   // Gets saved places saved in db
   getPlaces: function () {
     return axios.get("/api/places");
+  },
+  createUser: function () {
+    return axios.get("/api/createUser");
   },
   // Gets the place with the given id
   getAPlace: function (id) {

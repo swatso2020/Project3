@@ -1,0 +1,23 @@
+.placesSearchContainter{
+    background-color: #005675;
+    background-image: url(https://www.whizsky.com/wp-content/uploads/2019/04/5-features-by-Google-My-Business.jpg);
+    height: 650px;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+
+.input{
+    position: absolute;
+    top: 30%;
+}
+
+.margin{
+    margin:10px;
+}
+
+
+
+
+
+  

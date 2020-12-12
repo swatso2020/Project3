@@ -19,11 +19,14 @@ class SearchPlaces extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
-
+        
         API.searchPlaces(this.state.placeSearch)
+        
             .then(res => {
+
                 this.setState({ places: res.data.businesses }, function () {
                 })
+
             })
             .catch(err => console.log(err))
     };
