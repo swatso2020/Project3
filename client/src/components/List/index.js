@@ -24,6 +24,7 @@ export function PlaceListItem (props) {
             categories: props.categories,
             address: props.address[0],
             phone: props.phone,
+            url: props.url,
 
         }).then(
             res => console.log(res)
@@ -68,7 +69,7 @@ export function PlaceListItem (props) {
                             rel="noreferrer noopener"
                             className="btn btn-lg btn-danger input-lg yelpBTN"
                             target="_blank"
-                            href={props.link}
+                            href={props.url}
                         >
                             Yelp
                         </a>
