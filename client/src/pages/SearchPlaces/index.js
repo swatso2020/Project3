@@ -23,8 +23,9 @@ class SearchPlaces extends Component {
         API.searchPlaces(this.state.placeSearch)
         
             .then(res => {
-
+               
                 this.setState({ places: res.data.businesses }, function () {
+                    
                 })
 
             })
