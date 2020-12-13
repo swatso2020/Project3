@@ -23,8 +23,9 @@ class SearchPlaces extends Component {
         API.searchPlaces(this.state.placeSearch)
         
             .then(res => {
-
+               
                 this.setState({ places: res.data.businesses }, function () {
+                    
                 })
 
             })
@@ -47,8 +48,8 @@ class SearchPlaces extends Component {
                                         <Row>
                                             <Col size="xs-12 sm-12">
                                                 <Input
-                                                    name="bookSearch"
-                                                    value={this.state.bookSearch}
+                                                    name="placeSearch"
+                                                    value={this.state.placeSearch}
                                                     onChange={this.handleInputChange}
                                                     placeholder="Search for a Place"
                                                 />
