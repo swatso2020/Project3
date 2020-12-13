@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import NavTab from "../../components/NavTabs/SearchNavTab";
+import NavTab from "../../components/NavTabs/MyPlacesNavTab";
 import { Container, Row, Col } from "../../components/Grid";
 import { PlaceList, PlaceListItem } from "../../components/List";
 import { Input, SearchButton } from "../../components/Input";
@@ -41,13 +41,7 @@ class MyPlaces extends Component {
                                       
                                         <Row>
                                             <Col size="xs-12 sm-12">
-                                                <SearchButton
-                                                    onClick={this.handleFormSubmit}
-                                                    type="success"
-                                                    className="input-lg"
-                                                >
-                                                    Search
-                                            </SearchButton>
+                                                
                                             </Col>
                                         </Row>
                                     </Container>
@@ -65,7 +59,7 @@ class MyPlaces extends Component {
                                     return (
                                         <PlaceListItem
                                             name={place.name}
-                                             image_url={place.image_url}
+                                            image_url={place.image_url}
                                             categories={place.category}
                                             address={place.address}
                                             phone={place.phone}
