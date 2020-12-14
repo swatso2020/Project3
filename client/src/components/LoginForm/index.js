@@ -9,7 +9,8 @@ const LoginForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const logIn = async () => {
+    const logIn = async (e) => {
+        e.preventDefault()
         if (!email) {
             alert("Please enter your email address");
         } else if (!password) {
