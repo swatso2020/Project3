@@ -6,6 +6,7 @@ import { PlaceList, PlaceListItem } from "../../components/List";
 import { Input, SearchButton } from "../../components/Input";
 import "./style.css"
 
+
 class SearchPlaces extends Component {
     state = {
         places: [],
@@ -23,10 +24,13 @@ class SearchPlaces extends Component {
         API.searchPlaces(this.state.placeSearch)
         
             .then(res => {
+                console.log("this is the state")
                
                 this.setState({ places: res.data.businesses }, function () {
                     
                 })
+                console.log("this is whats in places")
+                console.log(this.state.places)
 
             })
             .catch(err => console.log(err))
@@ -80,6 +84,7 @@ class SearchPlaces extends Component {
                                 {this.state.places.map(place => {
                                     return (
                                         <PlaceListItem
+                                            //id = {place.id}
                                             image_url={place.image_url}
                                             name={place.name}
                                             categories={place.categories.title}

@@ -19,7 +19,7 @@ const object =
   },
   // calls api and retrieve places based on user input
   searchPlaces: async function (query) {
-    const queryUrl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+ query +"&location=miami"
+    const queryUrl = "http://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term="+ query +"&location=miami"
    const response = await axios.get(queryUrl, {
       
       headers: {
