@@ -21,6 +21,7 @@ class MyPlaces extends Component {
         API.getPlaces()
             .then(res => {
                 this.setState({ savedLocations: res.data }, function () {
+                    console.log("loading from Db")
                     console.log(this.state.savedLocations);
                 })
             })
@@ -58,6 +59,9 @@ class MyPlaces extends Component {
                                 {this.state.savedLocations.map(place => {
                                     return (
                                         <PlaceListItem
+                                            loadPlaces={this.loadPlaces}
+                                            //key={place.id}
+                                            id={place._id}
                                             name={place.name}
                                             image_url={place.image_url}
                                             categories={place.category}

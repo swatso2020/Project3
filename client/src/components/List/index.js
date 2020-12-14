@@ -13,21 +13,24 @@ export function PlaceList({ children }) {
 
 // component to render each place
 export function PlaceListItem (props) {
+   
 
     // function to handle saving place to db when save button is clicked
     const handleSaveBtn = event => {
-
         API.savePlace({
-
+            id:props.id,
             image_url: props.image_url,
             name: props.name,
             categories: props.categories,
             address: props.address[0],
             phone: props.phone,
-            url: props.url,
+            url: props.url
 
         }).then(
-            res => console.log(res)
+            res => {
+            console.log("this is saving places")
+            console.log(props)
+            }
         )
             .catch(
                 err => console.log(err)
@@ -41,14 +44,14 @@ export function PlaceListItem (props) {
                 res => {
                     // use loadPlaces prop from Saved page component
                     props.loadPlaces()
-                    console.log(props.id)
+                    console.log("place is deleted")
                 }
             )
             .catch(err => console.log(err))
     };
 
     return (
-        <li className="list-group-item" key={props.id}>
+        <li className="list-group-item" id={props.id}>
             <Container>
                 <Row>
                     <Col size="xs-4 sm-2">
@@ -56,6 +59,7 @@ export function PlaceListItem (props) {
                     </Col>
                     <Col size="xs-8 sm-10">
                         <h3>{props.name}</h3>
+                         <div> id: {props.id} </div> 
                         <h5>
                            {[props.categories].flat().join(", ")}
                         </h5>
@@ -65,6 +69,7 @@ export function PlaceListItem (props) {
                         <p>
                            Phone Number: {props.phone}
                         </p>
+                        
                         <a
                             rel="noreferrer noopener"
                             className="btn btn-lg btn-danger input-lg yelpBTN"
@@ -73,7 +78,13 @@ export function PlaceListItem (props) {
                         >
                             Yelp
                         </a>
-                        
+                        {/* <SaveBtn
+                                type="success"
+                                className="input-lg"
+                                onClick={handleSaveBtn}
+                            >
+                                Save
+                            </SaveBtn> */}
                         {/* if there is an object id render the SaveBtn component else render the DeleteBtn component */}
                         {!props.id ?
                             <SaveBtn

@@ -19,6 +19,7 @@ export function PlaceListItem (props) {
 
         API.getPlaces({
 
+            id:props.id,
             image_url: props.image_url,
             name: props.name,
             categories: props.categories,
@@ -26,7 +27,9 @@ export function PlaceListItem (props) {
             phone: props.phone,
 
         }).then(
-            res => console.log(res)
+            res => {
+                console.log("saved data loaded")
+                console.log(res)}
         )
             .catch(
                 err => console.log(err)
@@ -35,19 +38,22 @@ export function PlaceListItem (props) {
 
     // function to handle deleting place from db when delete button is clicked
     const handleDeleteBtn = event => {
-        API.deletePlace(props.id)
+        console.log("this is the delete")
+        API.deletePlace(props._id)
             .then(
                 res => {
                     // use loadPlaces prop from Saved page component
                     props.loadPlaces()
-                    console.log(props.id)
+                    console.log("this is the delete")
+                    console.log(props)
                 }
             )
             .catch(err => console.log(err))
     };
 
     return (
-        <li className="list-group-item" key={props.id}>
+        
+        <li className="list-group-item" id={props.id}>
             <Container>
                 <Row>
                     <Col size="xs-4 sm-2">
@@ -55,6 +61,7 @@ export function PlaceListItem (props) {
                     </Col>
                     <Col size="xs-8 sm-10">
                         <h3>{props.name}</h3>
+                        
                         <h5>
                            {[props.categories].flat().join(", ")}
                         </h5>
@@ -64,6 +71,7 @@ export function PlaceListItem (props) {
                         <p>
                            Phone Number: {props.phone}
                         </p>
+                       
                         <a
                             rel="noreferrer noopener"
                             className="btn btn-lg btn-danger input-lg yelpBTN"
